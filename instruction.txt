@@ -60,8 +60,3 @@ e. Run the Application
 - ClassNotFoundException for Mail or JDBC**: Ensure JARs are added to classpath.
 - FXML loading errors: Double-check FXML file paths and fx:id mappings.
 - MySQL connection issues: Check DB is running, correct port, and valid user credentials.
-
-5. Authors: 
-	Soumya Ganesh - 002812787
-	Neha Dharanu - 002055615
-	Harshith Eturu - 002026491
