@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="unieventhub.controller.StudentHomeController">
+
+    <!-- Top Header -->
+    <top>
+        <AnchorPane prefHeight="80.0" style="-fx-background-color: #991f36;">
+            <children>
+                <Label layoutX="80.0" layoutY="21.0" text="Student Dashboard" textFill="WHITE">
+                    <font><Font name="System Bold" size="24.0"/></font>
+                </Label>
+
+                <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="37.0" layoutY="23.0" preserveRatio="true">
+                    <image>
+                        <Image url="@../image/userdashboard.png"/>
+                    </image>
+                </ImageView>
+                 <!-- Profile Menu -->
+         <MenuButton fx:id="profileMenu" layoutY="25.0" layoutX="0.0" AnchorPane.rightAnchor="20.0" style="-fx-font-size: 14px; -fx-background-color: #A7C7E7; -fx-font-weight: bold;">
+             <graphic>
+                 <HBox spacing="5">
+                     <Label text="👤" />
+                     <Label fx:id="lblUserName" />
+                 </HBox>
+             </graphic>
+             <items>
+                 <MenuItem onAction="#onLogout" text="Logout" />
+             </items>
+         </MenuButton>
+
+                <!-- <Label fx:id="welcomeLabel" layoutX="650.0" layoutY="30.0" textFill="WHITE" 
+                       style="-fx-font-size: 16px; -fx-font-weight: bold;" /> -->
+            </children>
+        </AnchorPane>
+    </top>
+
+    <!--  Sidebar Menu -->
+    <left>
+        <AnchorPane prefWidth="180.0" style="-fx-background-color: #e0e0e0;">
+            <children>
+                <Label layoutX="55.0" layoutY="20.0" text="MENU">
+                    <font><Font name="System Bold" size="18.0"/></font>
+                </Label>
+
+                <VBox layoutX="15.0" layoutY="80.0" spacing="20" alignment="TOP_CENTER">
+                    <Button text="My Events" onAction="#handleViewMyEvents" prefWidth="150.0" style="-fx-font-weight: bold;"/>
+                    <Button text="Analytics" onAction="#handleViewAnalytics" prefWidth="150.0" style="-fx-font-weight: bold;"/>
+           <!--          <Button text="Logout" onAction="#onLogout" prefWidth="150.0" style="-fx-font-weight: bold;"/> -->
+                </VBox>
+            </children>
+        </AnchorPane>
+    </left>
+
+    <!-- Center Content: Events Table and Filters -->
+    <center>
+        <VBox spacing="15" style="-fx-padding: 20;">
+            <Label text="Available Events:" style="-fx-font-size: 16px;" />
+
+            <!--  Filters -->
+            <HBox spacing="15" alignment="CENTER_LEFT" style="-fx-padding: 10; -fx-background-color: #f5f5f5;">
+                <Label text="Category:"/>
+                <ComboBox fx:id="categoryFilter"/>
+
+                <Label text="Price:"/>
+                <ComboBox fx:id="priceFilter"/>
+
+                <Label text="From Date:"/>
+                <DatePicker fx:id="dateFilter"/>
+            </HBox>
+
+            <!--  Events Table -->
+            <TableView fx:id="eventTable" prefHeight="300" >
+                <columns>
+                    <TableColumn fx:id="nameCol" text="Name" prefWidth="120"/>
+                    <TableColumn fx:id="dateCol" text="Date" prefWidth="100"/>
+                    <TableColumn fx:id="startTimeCol" text="Start Time" prefWidth="100"/>
+                    <TableColumn fx:id="endTimeCol" text="End Time" prefWidth="100"/>
+                    <TableColumn fx:id="roomIdCol" text="Room No" prefWidth="80"/>
+                    <TableColumn fx:id="categoryCol" text="Category" prefWidth="100"/>
+                    <TableColumn fx:id="buildingNameCol" text="Building" prefWidth="120"/>
+                    <TableColumn fx:id="priceTypeCol" text="Type" prefWidth="80"/>
+                    <TableColumn fx:id="statusCol" text="Registration Status" prefWidth="140"/>
+                    <TableColumn fx:id="priceCol" text="Price ($)" prefWidth="100"/>
+                </columns>
+            </TableView>
+
+            <!--  Action Buttons -->
+            <HBox spacing="10">
+                <Button text="Register" onAction="#handleRegisterSelectedEvent"/>
+                <Button text="De-Register" onAction="#handleDeregisterSelectedEvent"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #991f36;"
+            xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="unieventhub.controller.LoginController">
+
+    <!-- TOP - Logo Section -->
+    <top>
+        <HBox spacing="20" alignment="CENTER" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+            <ImageView fitHeight="138.0" fitWidth="150.0" preserveRatio="true">
+                <image>
+                    <Image url="@../image/logo.jpg" />
+                </image>
+            </ImageView>
+            <ImageView fitHeight="110.0" fitWidth="344.0" preserveRatio="true">
+                <image>
+                    <Image url="@../image/neu.png" />
+                </image>
+            </ImageView>
+        </HBox>
+    </top>
+
+    <!-- CENTER - Login Form -->
+    <center>
+        <VBox spacing="15" alignment="CENTER" BorderPane.alignment="CENTER" style="-fx-padding: 30;" >
+            <Label text="Welcome to UniEventHub portal, find interesting events around you!" textFill="#f7f1f1">
+            <VBox.margin>
+        <Insets bottom="30"/> <!-- adds 30px gap below this label -->
+    </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="14.0" />
+                </font>
+            </Label>
+
+            <GridPane hgap="10" vgap="15" alignment="CENTER">
+			    <columnConstraints>
+			        <ColumnConstraints halignment="RIGHT" />
+			        <ColumnConstraints halignment="LEFT" hgrow="NEVER" />
+			    </columnConstraints>
+
+                <Label text="Username:" textFill="WHITE">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="txtUsername" promptText="Username" GridPane.columnIndex="1" prefWidth="200" maxWidth="250" />
+
+                <Label text="Password:" textFill="WHITE" GridPane.rowIndex="1">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <PasswordField fx:id="txtPassword" promptText="Password" GridPane.columnIndex="1" GridPane.rowIndex="1" prefWidth="200" maxWidth="250" />
+
+            </GridPane>
+
+		<VBox layoutX="300.0" layoutY="310.0" spacing="20" alignment="CENTER">
+		
+		    <!-- Spacer (if needed more space above buttons) -->
+		    <Region prefHeight="20.0" />
+            <HBox spacing="20" alignment="CENTER">
+                <Button fx:id="btnLogin" text="Login" style="-fx-background-color: #A7C7E7;" textFill="#1f2020"
+                        onAction="#onLoginClick">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <effect>
+                        <Glow />
+                    </effect>
+                </Button>
+
+                <Button fx:id="btnSignup" text="SignUp" style="-fx-background-color: #A7C7E7;" textFill="#1f2020"
+                        onAction="#onSignUpClick">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <effect>
+                        <Glow />
+                    </effect>
+                </Button>
+            </HBox>
+            </VBox>
+
+            <Hyperlink fx:id="hyplinkFpwd" text="FORGOT YOUR PASSWORD?" onAction="#onForgotPasswordClick" textFill="WHITE" />
+        </VBox>
+    </center>
+
+</BorderPane>

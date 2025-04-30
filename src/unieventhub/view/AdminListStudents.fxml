@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="unieventhub.controller.AdminListStudentsController">
+
+    <VBox spacing="15" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0"
+          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+          style="-fx-padding: 20px;">
+
+        <!-- Header -->
+        <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="All Registered Students" />
+
+        <!-- TableView -->
+			<TableView fx:id="tblStudents"
+           VBox.vgrow="ALWAYS">
+
+			    <columns>
+			        <TableColumn fx:id="colNeuid" text="NEUID" />
+			        <TableColumn fx:id="colFirstName" text="First Name" />
+			        <TableColumn fx:id="colLastName" text="Last Name" />
+			        <TableColumn fx:id="colEmail" text="Email" />
+			        <TableColumn fx:id="colContact" text="Contact Number" />
+			        <TableColumn fx:id="colCollege" text="College" />
+			        <TableColumn fx:id="colCourse" text="Course" />
+			    </columns>
+			    <!-- Enable auto resizing -->
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+        </columnResizePolicy>
+			</TableView>
+
+        <!-- Buttons -->
+        <HBox spacing="10">
+            <Button fx:id="btnEdit" onAction="#onEditClick" style=" -fx-font-weight: bold;" text="Edit Selected" />
+            <Button fx:id="btnDelete" onAction="#onDeleteClick" style=" -fx-font-weight: bold;" text="Delete Selected" />
+        </HBox>
+    </VBox>
+</AnchorPane>

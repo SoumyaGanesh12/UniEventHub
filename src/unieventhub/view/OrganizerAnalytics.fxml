@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<HBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="unieventhub.controller.OrganizerAnalyticsController"
+      spacing="20">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <!-- Left side: Bar Chart -->
+    <VBox spacing="10" alignment="TOP_CENTER">
+        <Label text="Event Registrations" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+        <BarChart fx:id="analyticsChart" prefHeight="450" prefWidth="600">
+            <xAxis>
+                <CategoryAxis label="Events" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="Registrations" />
+            </yAxis>
+        </BarChart>
+    </VBox>
+    
+    <!-- Right side: Pie Chart -->
+    <VBox spacing="10" alignment="TOP_CENTER">
+        <Label text="Registrations by Category" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+        <PieChart fx:id="categoryPieChart" prefHeight="450" prefWidth="600"/>
+    </VBox>
+</HBox>

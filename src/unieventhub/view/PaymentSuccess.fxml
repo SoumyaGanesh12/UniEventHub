@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="unieventhub.controller.PaymentSuccessController"
+            prefWidth="400" prefHeight="250" style="-fx-background-color: #e8f5e9;">
+    <children>
+        <Label layoutX="100" layoutY="60" text="Payment Successful!"
+               style="-fx-font-size: 20px; -fx-text-fill: green; -fx-font-weight: bold;" />
+        <Label layoutX="60" layoutY="110" text="You’ve been registered successfully."
+               style="-fx-font-size: 14px;" />
+        <Button layoutX="150" layoutY="170" text="Back"
+                onAction="#handleBack" />
+    </children>
+</AnchorPane>

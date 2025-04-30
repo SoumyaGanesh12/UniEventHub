@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="unieventhub.controller.OrganizerDashboardController">
+
+    <!-- TOP: Header -->
+    <top>
+        <AnchorPane prefHeight="80.0" style="-fx-background-color: #991f36;">
+            <children>
+                <!-- Title -->
+                <Label layoutX="80.0" layoutY="21.0" text="Organizer Dashboard" textFill="WHITE">
+                    <font><Font name="System Bold" size="24.0"/></font>
+                </Label>
+
+                <!-- Icon -->
+                <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="37.0" layoutY="23.0" preserveRatio="true">
+                    <image>
+                        <Image url="@../image/userdashboard.png"/>
+                    </image>
+                </ImageView>
+
+                <!-- Profile Menu -->
+                <MenuButton fx:id="profileMenu" layoutY="24.0"
+                            style="-fx-font-size: 14px; -fx-background-color: #A7C7E7; -fx-font-weight: bold;"
+                            AnchorPane.rightAnchor="20.0">
+                    <graphic>
+                        <HBox spacing="5">
+                            <Label text="👤"/>
+                            <Label fx:id="lblUserName"/>
+                        </HBox>
+                    </graphic>
+                    <items>
+                        <MenuItem onAction="#onLogout" text="Logout"/>
+                    </items>
+                </MenuButton>
+            </children>
+        </AnchorPane>
+    </top>
+
+    <!-- LEFT: Navigation Menu -->
+    <left>
+        <AnchorPane prefWidth="180.0" style="-fx-background-color: #e0e0e0;">
+            <children>
+                <Label layoutX="55.0" layoutY="20.0" text="MENU">
+                    <font><Font name="System Bold" size="18.0"/></font>
+                </Label>
+
+                <VBox layoutX="15.0" layoutY="80.0" spacing="20" alignment="TOP_CENTER">
+                    <Button text="My Events" onAction="#loadMyEventsView"
+                            prefWidth="150.0" style="-fx-font-weight: bold;"/>
+                    <Button text="Analytics" onAction="#loadAnalyticsView"
+                            prefWidth="150.0" style="-fx-font-weight: bold;"/>
+                </VBox>
+            </children>
+        </AnchorPane>
+    </left>
+
+    <!-- CENTER: Dynamic Content -->
+    <center>
+        <StackPane fx:id="mainContentPane" style="-fx-background-color: white;">
+            <!-- Dynamic Views (MyEvents.fxml or Analytics.fxml) Loaded Here -->
+        </StackPane>
+    </center>
+
+    <!-- OPTIONAL: Footer (Consistent Branding) -->
+    <!-- <bottom>
+        <AnchorPane prefHeight="30.0" style="-fx-background-color: #991f36;">
+            <Label layoutX="10.0" layoutY="5.0" text="UniEventHub © 2025" textFill="WHITE">
+                <font><Font size="12.0"/></font>
+            </Label>
+        </AnchorPane>
+    </bottom>-->
+
+</BorderPane>

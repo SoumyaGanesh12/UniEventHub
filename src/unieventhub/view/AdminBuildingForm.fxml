@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane xmlns="http://javafx.com/javafx/23.0.1"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="unieventhub.controller.AdminBuildingFormController"
+          hgap="10" vgap="12"
+          style="-fx-background-color: #e0e0e0;">
+    
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <!-- Header -->
+    <Label text="Building Details"
+           style="-fx-font-size: 18px; -fx-font-weight: bold;"
+           GridPane.columnSpan="2"
+           GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+
+    <!-- Building Name -->
+    <Label text="Building Name:"
+           style="-fx-text-fill: #991f36; -fx-font-weight: bold;"
+           GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <TextField fx:id="txtName" promptText="Enter building name"
+               GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+    <!-- Max Rooms Allowed -->
+    <Label text="Max Rooms Allowed:"
+           style="-fx-text-fill: #991f36; -fx-font-weight: bold;"
+           GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+    <TextField fx:id="txtMaxRooms" promptText="Enter max number of rooms"
+               GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+    <!-- Buttons wrapped in HBox inside a StackPane to align right properly -->
+  <!-- Buttons -->
+<StackPane alignment="CENTER_RIGHT" GridPane.rowIndex="3" GridPane.columnIndex="1">
+    <HBox spacing="10">
+        <Button text="Cancel" onAction="#onCancelClick"
+                style="-fx-text-fill: black; -fx-font-weight: bold;" />
+        <Button text="Save" onAction="#onSaveClick"
+                style="-fx-text-fill: black; -fx-font-weight: bold;" />
+    </HBox>
+</StackPane>
+
+
+
+
+</GridPane>

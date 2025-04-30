@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="unieventhub.controller.AdminAnalyticsController">
+    <VBox spacing="20" prefWidth="1000.0" prefHeight="600.0" AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="0" style="-fx-padding: 20;">
+        
+        <HBox spacing="20" HBox.hgrow="ALWAYS">
+            <!-- Top 5 Registered Events -->
+            <VBox HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
+                <Label text="Top 5 Registered Events" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+                <BarChart fx:id="barTopEvents" VBox.vgrow="ALWAYS">
+                    <xAxis>
+                        <CategoryAxis label="Events" />
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis label="Registrations" />
+                    </yAxis>
+                </BarChart>
+            </VBox>
+
+            <!-- Events Per Organizer -->
+            <VBox HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
+                <Label text="Events Per Organizer" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+                <BarChart fx:id="barEventsPerOrganizer" VBox.vgrow="ALWAYS">
+                    <xAxis>
+                        <CategoryAxis label="Organizer" />
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis label="Event Count" />
+                    </yAxis>
+                </BarChart>
+            </VBox>
+        </HBox>
+
+        <!-- Registrations by Category -->
+        <VBox alignment="CENTER" VBox.vgrow="ALWAYS">
+            <Label text="Registrations by Category" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+            <PieChart fx:id="pieCategoryDistribution" prefHeight="300" prefWidth="300" />
+        </VBox>
+
+    </VBox>
+</AnchorPane>

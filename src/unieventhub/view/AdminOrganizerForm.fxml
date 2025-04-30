@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane xmlns="http://javafx.com/javafx/23.0.1"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="unieventhub.controller.AdminOrganizerFormController"
+          hgap="10" vgap="12"
+          style="-fx-background-color: #e0e0e0;">
+         
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <!-- Header -->
+    <Label text="Organizer Details"
+           style="-fx-font-size: 18px; -fx-font-weight: bold;"
+           GridPane.columnSpan="2"
+           GridPane.rowIndex="0" GridPane.columnIndex="0" />
+
+    <!-- First Name -->
+    <Label text="First Name:"
+           style="-fx-text-fill: #991f36; -fx-font-weight: bold;"
+           GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <TextField fx:id="txtFirstName" promptText="First Name" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+    <!-- Last Name -->
+    <Label text="Last Name:"
+           style="-fx-text-fill: #991f36; -fx-font-weight: bold;"
+           GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+    <TextField fx:id="txtLastName" promptText="Last Name" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+    <!-- Email -->
+    <Label text="Email:"
+           style="-fx-text-fill: #991f36; -fx-font-weight: bold;"
+           GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+    <TextField fx:id="txtEmail" promptText="Email" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+    <!-- Contact -->
+    <Label text="Contact Number:"
+           style="-fx-text-fill: #991f36; -fx-font-weight: bold;"
+           GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+    <TextField fx:id="txtContact" promptText="Contact Number" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+    <!-- Club -->
+    <Label text="Club Name:"
+           style="-fx-text-fill: #991f36; -fx-font-weight: bold;"
+           GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+    <TextField fx:id="txtClub" promptText="Club Name" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+    <!-- Buttons -->
+    <HBox spacing="10" alignment="CENTER_RIGHT"
+          GridPane.rowIndex="6" GridPane.columnIndex="1">
+        <Button text="Cancel" onAction="#onCancelClick"
+                style="-fx-background-color: #A7C7E7; -fx-text-fill: black; -fx-font-weight: bold;"/>
+        <Button text="Save" onAction="#onSaveClick"
+                style="-fx-background-color: #A7C7E7; -fx-text-fill: black; -fx-font-weight: bold;"/>
+    </HBox>
+</GridPane>

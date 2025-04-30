@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/23.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="unieventhub.controller.AdminListEventsController"
+      spacing="15"
+      fillWidth="true">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="All Events"/>
+
+    <TableView fx:id="tblEvents" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colName" text="Name"/>
+            <TableColumn fx:id="colOrganizerClub" text="Club"/>
+            <TableColumn fx:id="colDate" text="Date"/>
+            <TableColumn fx:id="colStartTime" text="Start Time"/>
+            <TableColumn fx:id="colEndTime" text="End Time"/>
+            <TableColumn fx:id="colLocation" text="Location"/>
+            <TableColumn fx:id="colPrice" text="Price"/>
+            <TableColumn fx:id="colFoodAvailability" text="Food"/>
+            <TableColumn fx:id="colRegSummary" text="Reg/Seat"/>
+        </columns>
+        <!-- Enable auto resizing -->
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+        </columnResizePolicy>
+    </TableView>
+
+    <HBox spacing="10">
+        <Button fx:id="btnAdd" onAction="#onAddEvent" style="-fx-font-weight: bold;" text="Add Event"/>
+        <Button fx:id="btnUpdate" onAction="#onUpdateEvent" style="-fx-font-weight: bold;" text="Update Event"/>
+        <Button fx:id="btnDelete" onAction="#onDeleteEvent" style="-fx-font-weight: bold;" text="Delete Event"/>
+    </HBox>
+
+</VBox>

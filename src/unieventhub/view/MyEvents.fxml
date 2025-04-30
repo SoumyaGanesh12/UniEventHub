@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="unieventhub.controller.MyEventsController"
+      spacing="10" alignment="TOP_CENTER">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="My Events" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+	<HBox spacing="15" alignment="CENTER_LEFT" style="-fx-padding: 10; -fx-background-color: #f5f5f5;">
+    <Label text="Category:"/>
+    <ComboBox fx:id="categoryFilter"/>
+
+    <Label text="Price:"/>
+    <ComboBox fx:id="priceFilter"/>
+
+    <Label text="Date:"/>
+    <DatePicker fx:id="dateFilter"/>
+</HBox>
+	
+   <TableView fx:id="eventTable" prefWidth="800.0" prefHeight="450.0">
+    <columns>
+        <TableColumn fx:id="colName" text="Name"/>
+        <TableColumn fx:id="colDescription" text="Description" />
+        <TableColumn fx:id="colDate" text="Date"/>
+        <TableColumn fx:id="colStartTime" text="Start Time"/>
+        <TableColumn fx:id="colEndTime" text="End Time"/>
+        <TableColumn fx:id="colCategory" text="Category"/>
+        <TableColumn fx:id="colLocation" text="Location"/>
+        <TableColumn fx:id="colRegistrationType" text="Registration Type"/>
+        <TableColumn fx:id="colPrice" text="Price"/>
+        <TableColumn fx:id="colFoodAvailability" text="Food Availability"/>
+        <TableColumn fx:id="colSeatLimit" text="Seat Limit"/>
+        <TableColumn fx:id="colRegistrations" text="Registrations"/>
+    </columns>
+</TableView>
+
+
+
+    <HBox spacing="10">
+        <Button text="Add Event" onAction="#onAddEvent"/>
+        <Button text="Update Event" onAction="#onUpdateEvent"/>
+        <Button text="Delete Event" onAction="#onDeleteEvent"/>
+    </HBox>
+
+</VBox>

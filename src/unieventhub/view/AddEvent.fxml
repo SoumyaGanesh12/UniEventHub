@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane xmlns:fx="http://javafx.com/fxml"
+          fx:controller="unieventhub.controller.EventController"
+          hgap="10" vgap="10"
+          style="-fx-background-color: #e0e0e0;">
+    
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <!-- Row 0 -->
+    <HBox spacing="2" GridPane.rowIndex="0" GridPane.columnIndex="0">
+        <Label text="Event Name:" style="-fx-text-fill: #991f36; -fx-font-size: 14px; -fx-font-weight: bold;" />
+        <Label text="*" style="-fx-text-fill: red;" />
+    </HBox>
+    <TextField fx:id="txtName" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+ 	<!-- Row 1 -->
+	<Label text="Description:" GridPane.rowIndex="1" GridPane.columnIndex="0"
+       style="-fx-text-fill: #991f36; -fx-font-size: 14px; -fx-font-weight: bold;"/>
+	<TextArea fx:id="txtDescription" GridPane.rowIndex="1" GridPane.columnIndex="1" prefRowCount="3" wrapText="true"/>
+
+    <!-- Row 2 -->
+    <HBox spacing="2" GridPane.rowIndex="2" GridPane.columnIndex="0">
+        <Label text="Date:" style="-fx-text-fill: #991f36; -fx-font-size: 14px; -fx-font-weight: bold;"/>
+        <Label text="*" style="-fx-text-fill: red;" />
+    </HBox>
+    <DatePicker fx:id="datePicker" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+    <!-- Row 3 -->
+    <HBox spacing="2" GridPane.rowIndex="3" GridPane.columnIndex="0">
+        <Label text="Start Time:" style="-fx-text-fill: #991f36; -fx-font-size: 14px; -fx-font-weight: bold;"/>
+        <Label text="*" style="-fx-text-fill: red;" />
+    </HBox>
+    <TextField fx:id="txtStartTime" promptText="HH:MM" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+    <!-- Row 4 -->
+    <HBox spacing="2" GridPane.rowIndex="4" GridPane.columnIndex="0">
+        <Label text="End Time:" style="-fx-text-fill: #991f36; -fx-font-size: 14px; -fx-font-weight: bold;"/>
+        <Label text="*" style="-fx-text-fill: red;" />
+    </HBox>
+    <TextField fx:id="txtEndTime" promptText="HH:MM" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+<!-- Row 5 -->
+<Label text="Category:" GridPane.rowIndex="5" GridPane.columnIndex="0"
+       style="-fx-text-fill: #991f36; -fx-font-size: 14px; -fx-font-weight: bold;"/>
+<ComboBox fx:id="comboCategory" promptText="Select Category" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+    <!-- Row 6 -->
+    <HBox spacing="2" GridPane.rowIndex="6" GridPane.columnIndex="0">
+        <Label text="Building:" style="-fx-text-fill: #991f36; -fx-font-size: 14px; -fx-font-weight: bold;" />
+        <Label text="*" style="-fx-text-fill: red;" />
+    </HBox>
+    <ComboBox fx:id="comboBuilding" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+    <!-- Row 7 -->
+    <HBox spacing="2" GridPane.rowIndex="7" GridPane.columnIndex="0">
+        <Label text="Room:" style="-fx-text-fill: #991f36; -fx-font-size: 14px; -fx-font-weight: bold;" />
+        <Label text="*" style="-fx-text-fill: red;" />
+    </HBox>
+    <ComboBox fx:id="comboRoom" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+
+    <!-- Row 8 -->
+    <HBox spacing="2" GridPane.rowIndex="8" GridPane.columnIndex="0">
+        <Label text="Registration Type:" style="-fx-text-fill: #991f36; -fx-font-size: 14px; -fx-font-weight: bold;" />
+        <Label text="*" style="-fx-text-fill: red;" />
+    </HBox>
+    <ComboBox fx:id="comboRegType" GridPane.rowIndex="8" GridPane.columnIndex="1"/>
+
+    <!-- Row 9 -->
+    <HBox spacing="2" fx:id="priceLabelBox" GridPane.rowIndex="9" GridPane.columnIndex="0"
+          visible="false" managed="false">
+        <Label text="Price:" style="-fx-text-fill: #991f36; -fx-font-size: 14px; -fx-font-weight: bold;" />
+        <Label text="*" style="-fx-text-fill: red;" />
+    </HBox>
+    <TextField fx:id="txtPrice" GridPane.rowIndex="9" GridPane.columnIndex="1"
+               visible="false" managed="false"/>
+
+    <!-- Row 10 -->
+    <Label text="Food Availability:" GridPane.rowIndex="10" GridPane.columnIndex="0"
+           style="-fx-text-fill: #991f36; -fx-font-size: 14px; -fx-font-weight: bold;" />
+    <ComboBox fx:id="comboFood" GridPane.rowIndex="10" GridPane.columnIndex="1"/>
+
+    <!-- Row 11 -->
+    <HBox spacing="2" GridPane.rowIndex="11" GridPane.columnIndex="0">
+        <Label text="Seat Limit:" style="-fx-text-fill: #991f36; -fx-font-size: 14px; -fx-font-weight: bold;" />
+        <Label text="*" style="-fx-text-fill: red;" />
+    </HBox>
+    <TextField fx:id="txtSeatLimit" GridPane.rowIndex="11" GridPane.columnIndex="1"/>
+
+    <!-- Row 12 -->
+    <HBox spacing="10" alignment="CENTER_RIGHT" GridPane.rowIndex="12" GridPane.columnIndex="1">
+        <Button text="Cancel" onAction="#onCancel"
+                style="-fx-background-color: #A7C7E7; -fx-text-fill: black; -fx-font-weight: bold;" />
+        <Button fx:id="btnSubmit" text="Submit" onAction="#onSubmit"
+                style="-fx-background-color: #A7C7E7; -fx-text-fill: black; -fx-font-weight: bold;" />
+    </HBox>
+</GridPane>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #991f36;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="unieventhub.controller.SignupController">
+
+    <!-- Header -->    
+    <top>
+        <HBox spacing="20" alignment="CENTER" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+            <ImageView fitHeight="138.0" fitWidth="150.0" preserveRatio="true">
+                <image>
+                    <Image url="@../image/logo.jpg" />
+                </image>
+            </ImageView>
+            <ImageView fitHeight="110.0" fitWidth="344.0" preserveRatio="true">
+                <image>
+                    <Image url="@../image/neu.png" />
+                </image>
+            </ImageView>
+        </HBox>
+    </top>
+
+    <!-- Center Form -->
+    <center>
+        <VBox alignment="TOP_CENTER" spacing="20" style="-fx-padding: 20px;">
+            <Label text="Welcome to UniEventHub portal, find interesting events around you!" textFill="WHITE" style="-fx-font-weight: bold;" />
+
+            <GridPane hgap="30" vgap="10" alignment="CENTER">
+                <columnConstraints>
+                    <ColumnConstraints halignment="RIGHT" />
+                    <ColumnConstraints prefWidth="180" />
+                    <ColumnConstraints halignment="RIGHT" />
+                    <ColumnConstraints prefWidth="180" />
+                </columnConstraints>
+
+                <!-- Row 1 -->
+                <Label text="FirstName :" textFill="WHITE" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtFn" promptText="Firstname" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                <Label text="Mail ID :" textFill="WHITE" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+                <TextField fx:id="txtEmailId" promptText="Email address" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+                <!-- Row 2 -->
+                <Label fx:id="lblErrorFn" textFill="YELLOW" visible="false" maxWidth="Infinity" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                <Label fx:id="lblErrorMail" textFill="YELLOW" visible="false" maxWidth="Infinity" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+
+                <!-- Row 3 -->
+                <Label text="LastName :" textFill="WHITE" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtLn" promptText="Lastname" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                <Label text="Username :" textFill="WHITE" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+                <TextField fx:id="txtUser" promptText="Username" GridPane.rowIndex="2" GridPane.columnIndex="3"/>
+
+                <!-- Row 4 -->
+                <Label fx:id="lblErrorLn" textFill="YELLOW" visible="false" maxWidth="Infinity" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                
+			       <Label fx:id="lblErrorUser" textFill="YELLOW" visible="false"
+       GridPane.rowIndex="3" GridPane.columnIndex="3"
+       wrapText="true" maxWidth="300" />
+                
+
+                <!-- Row 5 -->
+                <Label text="You are :" textFill="WHITE" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="comboRole" promptText="Student/Organizer" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+                <Label text="Password :" textFill="WHITE" GridPane.rowIndex="4" GridPane.columnIndex="2"/>
+                <PasswordField fx:id="txtPwd" promptText="Password" GridPane.rowIndex="4" GridPane.columnIndex="3"/>
+
+                <!-- Row 6 -->
+                <Label fx:id="lblErrorPwd" textFill="YELLOW" visible="false"
+       GridPane.rowIndex="5" GridPane.columnIndex="3"
+       wrapText="true" maxWidth="300" />
+               
+                <!-- Row 7 -->
+                <Label fx:id="lblNeuid" text="NEU ID :" textFill="WHITE" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtNeuid" promptText="NEU ID" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+                <Label fx:id="lblClub" text="Club :" textFill="WHITE" visible="false" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtClub" promptText="Club Name" visible="false" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+                <Label fx:id="lblContactNumber" text="Contact Number :" textFill="WHITE" GridPane.rowIndex="6" GridPane.columnIndex="2"/>
+                <TextField fx:id="txtContactNumber" promptText="Phone Number" GridPane.rowIndex="6" GridPane.columnIndex="3"/>
+
+                <!-- Row 8 -->
+                <Label fx:id="lblErrorNeuid" textFill="YELLOW" visible="false" maxWidth="Infinity" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+                
+				<Label fx:id="lblErrorClub" textFill="YELLOW" visible="false"
+				       GridPane.rowIndex="7" GridPane.columnIndex="1"
+				       wrapText="true" maxWidth="300" />
+                <Label fx:id="lblErrorPhone" textFill="YELLOW" visible="false" maxWidth="Infinity" GridPane.rowIndex="7" GridPane.columnIndex="3"/>
+
+                <!-- Row 9 -->
+                <Label fx:id="lblCollege" text="College :" textFill="WHITE" GridPane.rowIndex="9" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="comboCollege" promptText="Select your college" GridPane.rowIndex="9" GridPane.columnIndex="1"/>
+                <Label fx:id="lblCourse" text="Course :" textFill="WHITE" GridPane.rowIndex="9" GridPane.columnIndex="2"/>
+                <ComboBox fx:id="comboCourse" promptText="Select your course" GridPane.rowIndex="9" GridPane.columnIndex="3"/>
+
+                <!-- Row 10 -->
+                <Label fx:id="lblErrorCollege" textFill="YELLOW" maxWidth="Infinity" GridPane.rowIndex="10" GridPane.columnIndex="1"/>
+                <Label fx:id="lblErrorCourse" textFill="YELLOW" maxWidth="Infinity" GridPane.rowIndex="10" GridPane.columnIndex="3"/>
+
+                <!-- Buttons -->
+                <HBox spacing="20" alignment="CENTER" GridPane.rowIndex="12" GridPane.columnSpan="4" style="-fx-padding: 10 0 0 0;">
+                    <Button fx:id="btnLogin" text="Login" onAction="#onLoginClick" style="-fx-background-color: #A7C7E7;" textFill="#1f2020">
+                        <font>
+                            <Font size="16.0" />
+                        </font>
+                        <cursor>
+                            <Cursor fx:constant="HAND" />
+                        </cursor>
+                        <effect>
+                            <Glow />
+                        </effect>
+                    </Button>
+                    <Button fx:id="btnSubmit" text="Submit" onAction="#onSubmitClick" style="-fx-background-color: #A7C7E7;" textFill="#1f2020">
+                        <font>
+                            <Font size="16.0" />
+                        </font>
+                        <cursor>
+                            <Cursor fx:constant="HAND" />
+                        </cursor>
+                        <effect>
+                            <Glow />
+                        </effect>
+                    </Button>
+                </HBox>
+            </GridPane>
+        </VBox>
+    </center>
+
+</BorderPane>

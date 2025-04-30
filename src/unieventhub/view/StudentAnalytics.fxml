@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="unieventhub.controller.StudentAnalyticsController">
+
+    <top>
+        <AnchorPane prefHeight="80.0" style="-fx-background-color: #991f36;">
+            <children>
+                <Label layoutX="80.0" layoutY="21.0" text="Student Analytics" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+                <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="37.0" layoutY="23.0" preserveRatio="true">
+                    <image>
+                        <Image url="@../image/userdashboard.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </top>
+
+    <center>
+        <VBox spacing="20" alignment="CENTER" style="-fx-padding: 30;">
+            <Label text=" Student Event Analytics" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+            <PieChart fx:id="categoryPieChart" prefHeight="400" prefWidth="600" />
+            <VBox spacing="10" alignment="CENTER">
+                <Label fx:id="totalRegisteredLabel" text="Total Events Registered: " />
+                <Label fx:id="moneySpentLabel" text="Total Money Spent: " />
+                <Label fx:id="categoryBreakdownLabel" text="Category Breakdown: " />
+            </VBox>
+            <Button text="Back" onAction="#handleBack" style="-fx-font-size: 14px;" />
+        </VBox>
+    </center>
+</BorderPane>

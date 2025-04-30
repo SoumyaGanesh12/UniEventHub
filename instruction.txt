@@ -1,0 +1,67 @@
+UniEventHub - University Event Management System
+------------------------------------------------
+
+This is a JavaFX desktop application designed for university event management. It supports user roles like organizers, students, and admins, and connects to a MySQL database backend.
+
+1. Prerequisites
+
+- Java 17 or higher
+- JavaFX SDK (Download from https://gluonhq.com/products/javafx/)
+- MySQL Server installed and running
+- MySQL JDBC Driver (mysql-connector-java)
+- Jakarta Mail API (jakarta.mail.jar)
+- Eclipse
+
+2. Setup Instructions
+
+a. Import the Project
+   - Unzip the folder or download from https://github.com/NehaDharanuNEU/UniEventHub.git and Unzip
+   - Open the project in Eclipse.
+   - Configure Java SDK and JavaFX library under Project Structure or Build Path.
+
+b. Add External JARs to Classpath
+   - Go to Project Structure > Modules > Dependencies.
+   - Click '+' → 'JARs or directories'.
+   - Add the following JARs from `/lib/`:
+     - `jakarta.mail.jar`
+     - `mysql-connector-java-x.x.x.jar`
+     - JavaFX SDK JARs from JavaFX SDK’s `/lib` folder:
+       - `javafx.base.jar`
+       - `javafx.controls.jar`
+       - `javafx.fxml.jar`
+       - `javafx.graphics.jar`
+
+c. Set Up MySQL Database
+   - Use MySQL Workbench or any client.
+   - In `DBConnection.java`, update the following:
+     - DB URL
+     - Username
+     - Password
+
+d. Run Configuration VM Options
+   Add the following VM options (especially needed when running JavaFX on Java 11+):
+--module-path /path/to/javafx-sdk-XX/lib --add-modules javafx.controls,javafx.fxml
+
+e. Run the Application
+   - Locate `Main.java`
+   - Right-click and select "Run"
+   - The login screen should launch using JavaFX
+
+3. Project Structure
+- `src/` - Java source code
+- `resources/` - FXML, CSS, and media assets
+- `lib/` - Contains:
+ - `jakarta.mail.jar`
+ - `mysql-connector-java.jar`
+ - JavaFX JARs from SDK
+
+4. Troubleshooting
+- JavaFX SDK errors: Ensure module-path is set properly in VM options.
+- ClassNotFoundException for Mail or JDBC**: Ensure JARs are added to classpath.
+- FXML loading errors: Double-check FXML file paths and fx:id mappings.
+- MySQL connection issues: Check DB is running, correct port, and valid user credentials.
+
+5. Authors: 
+	Soumya Ganesh - 002812787
+	Neha Dharanu - 002055615
+	Harshith Eturu - 002026491
